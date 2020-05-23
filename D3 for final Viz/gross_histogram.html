@@ -65,15 +65,15 @@
     
         // set the parameters for the histogram
         var histogram = d3.histogram()
-            .value(function(d) { return d.gross; })   // I need to give the vector of value
-            .domain(x.domain())  // then the domain of the graphic
-            .thresholds(x.ticks(nBin)); // then the numbers of bins
+            .value(function(d) { return d.gross; })   
+            .domain(x.domain())  
+            .thresholds(x.ticks(nBin)); 
     
         // And apply this function to data to get the bins
         var bins = histogram(data);
     
         // Y axis: update now that we know the domain
-        y.domain([0, d3.max(bins, function(d) { return d.length; })]);   // d3.hist has to be called before the Y axis obviously
+        y.domain([0, d3.max(bins, function(d) { return d.length; })]);   
         yAxis
             .transition()
             .duration(1000)
@@ -84,7 +84,7 @@
             .data(bins)
             
     
-        // Manage the existing bars and eventually the new ones:
+        
         u
             .enter()
             .append("rect") // Add a new rect for each new elements
@@ -112,7 +112,7 @@
                     .duration(200)
                      .style("opacity", 0);})
     
-        // If less bar in the new histogram, I delete the ones not in use anymore
+        
         u
             .exit()
             .remove()
@@ -124,7 +124,7 @@
       update(20)
     
     
-      // Listen to the button -> update if user change it
+      // Listen to the button -> update if user changes it
       d3.select("#nBin").on("input", function() {
         update(+this.value);
       });

@@ -189,26 +189,7 @@
                 })
                 .transition().duration(500).attr("opacity", 1)
                 });
-            // let circles = d3.selectAll("circle").data(data);
-            //     circles.on("mouseover", function (d) {
-            //         div.transition()
-            //             .duration(200)
-            //             .style("opacity", .9);
-            //         div.html(
-            //                 d[rating])
-            //             .style("left", (d3.event.pageX + 10) + "px")
-            //             .style("top", (d3.event.pageY - 28) + "px")});
-            // svg
-            //     .selectAll("circle")
-            //     .data(data)
-            //     .on("mouseover", function (d) {
-            //         div.transition()
-            //             .duration(200)
-            //             .style("opacity", .9);
-            //         div.html(
-            //                 d[rating])
-            //             .style("left", (d3.event.pageX + 10) + "px")
-            //             .style("top", (d3.event.pageY - 28) + "px")});
+
 
             let circles = d3.selectAll("circle").data(data);
                 circles.exit()
